@@ -2,7 +2,8 @@ import './style.css'
 
 import * as THREE from 'three'
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
-import { PointLight } from 'three'
+import { PointLight } from 'three' 
+
 
 const scene = new THREE.Scene()
 
@@ -14,10 +15,10 @@ const renderer = new THREE.WebGL1Renderer({
 
 renderer.setPixelRatio( window.devicePixelRatio )
 renderer.setSize( window.innerWidth, window.innerHeight )
-camera.position .setZ(30)
+camera.position.setZ(30)
 
 renderer.render (scene, camera)
-const goldTexture = new THREE.TextureLoader().load('gold.jpg')
+const goldTexture = new THREE.TextureLoader().load('/gold.jpg')
 
 const geometry = new THREE.TorusGeometry(6.2, 1.4, 12, 100)
 const material = new THREE.MeshPhongMaterial( {map: goldTexture} )
@@ -53,7 +54,7 @@ Array(300).fill().forEach(addStar)
 
 //Box
 
-const colorTexture = new THREE.TextureLoader().load('color_texture.jpg')
+const colorTexture = new THREE.TextureLoader().load('/color_texture.jpg')
 
 const color = new THREE.Mesh(
   new THREE.BoxGeometry(3,3,3),
